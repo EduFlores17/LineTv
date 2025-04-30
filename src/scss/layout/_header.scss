@@ -1,45 +1,115 @@
 @use 'base/variables' as v;
 
 .header {
-    background-image: url(/src/img/portada.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 50rem;
+  background-image: url(/src/img/portada.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50rem;
 
-    .contenido{
-        background-color: rgba(0, 0, 0, 0.7);  /* Fondo negro con 50% de transparencia */
+  .contenido {
+    background-color: rgba(0, 0, 0, 0.7); // capa oscura
+  }
+
+  .barra {
+    display: flex;
+    flex-direction: column; // mobile first
+    align-items: center;
+    padding: 1rem;
+
+    .logo {
+      width: 50%; // más grande en móvil
+      height: auto;
     }
 
-    .barra {
+    .navbar {
+      margin-left: 0;
+      margin-top: 1rem;
+
+      .navegacion {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
+        gap: 1rem;
 
+        a {
+          color: aliceblue;
+          text-decoration: none;
+          font-size: 2rem;
+          text-align: center;
 
-        .logo {
-            width: 15%;
-            height: 50%;
+          &:hover {
+            color: green;
+          }
         }
-
-        .navbar {
-            margin-left: auto; /* Mueve la barra de navegación hacia la derecha */
-
-            .navegacion {
-                display: flex;
-                gap: 2rem;
-
-                a {
-                    color: aliceblue;
-                    text-decoration: none;
-                    font-size: 2.2rem;
-                    text-align: center;
-
-                    &:hover {
-                        color: green;
-                    }
-                }
-            }
-        }
+      }
     }
+  }
+
+  // Móviles grandes (≥480px)
+  @media (min-width: 480px) {
+    .barra {
+      .logo {
+        width: 40%;
+      }
+    }
+  }
+
+  // Tablets (≥768px)
+  @media (min-width: 768px) {
+    .barra {
+      flex-direction: row;
+      justify-content: space-between;
+
+      .logo {
+        width: 20%;
+      }
+
+      .navbar {
+        margin-left: auto;
+        margin-top: 0;
+
+        .navegacion {
+          flex-direction: row;
+          gap: 2rem;
+
+          a {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+
+  // Monitores normales (≥1024px)
+  @media (min-width: 1024px) {
+    .barra {
+      padding: 2rem;
+
+      .logo {
+        width: 15%;
+      }
+
+      .navegacion {
+        a {
+          font-size: 2.2rem;
+        }
+      }
+    }
+  }
+
+  // Pantallas grandes (≥1440px)
+  @media (min-width: 1440px) {
+    .barra {
+      .logo {
+        width: 12%;
+      }
+
+      .navegacion {
+        a {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
 }

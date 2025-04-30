@@ -43,16 +43,17 @@ gulp.task('js', () => {
 
 // Tarea para compilar Sass y recargar el navegador
 gulp.task('styles', () => {
-  return gulp.src('src/scss/index.scss')  // Ruta al archivo principal Sass
+  return gulp.src('src/scss/index.scss')
     .pipe(gulpSass().on('error', function (err) {
-      console.log(err.message);  // Mostrar el error en consola
-      this.emit('end');  // Evitar que se detenga la ejecución
+      console.log(err.message);
+      this.emit('end');
     }))
-    .pipe(autoprefixer())  // Aplica prefijos CSS automáticos
-    .pipe(cleanCSS())  // Minifica el CSS
-    .pipe(gulp.dest('dist/css'))  // Carpeta de salida para el CSS compilado
-    .pipe(browserSync.stream());  // Recarga el CSS en el navegador sin recargar la página completa
+    .pipe(autoprefixer())
+    .pipe(cleanCSS())
+    .pipe(gulp.dest('dist/css'))
+    .pipe(browserSync.stream()); // ✅ Esto es correcto para inyectar CSS sin recargar
 });
+
 
 // Tarea para copiar imágenes
 gulp.task('images', () => {
@@ -64,8 +65,9 @@ gulp.task('images', () => {
 // Iniciar BrowserSync
 gulp.task('serve', gulp.series('php-server', () => {
   browserSync.init({
-    proxy: "localhost:3000",
-    open: false,
+    proxy: "localhost:3000", // usa el proxy si usas PHP
+    open: true,
+    notify: true, // muestra un banner cuando recarga
     port: 3000,
     ui: { port: 3001 }
   });
@@ -73,7 +75,7 @@ gulp.task('serve', gulp.series('php-server', () => {
   // Vigilar archivos Sass, JS, PHP y HTML
   gulp.watch('src/scss/**/*.scss', gulp.series('styles'));  // Procesa y recarga CSS
   gulp.watch('src/js/**/*.js', gulp.series('js', browserSync.reload));  // Procesa JS y recarga la página
-  gulp.watch('*.php').on('change', browserSync.reload);    // Recarga la página cuando haya cambios en PHP
+  gulp.watch('**/*.php').on('change', browserSync.reload);// Recarga la página cuando haya cambios en PHP
   gulp.watch('*.html').on('change', browserSync.reload);   // Recarga la página cuando haya cambios en HTML
 }));
 

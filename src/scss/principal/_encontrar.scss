@@ -1,0 +1,64 @@
+.encontrar {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/src/img/encontrar.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70rem;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+    h1 {
+      text-align: center;
+      font-size: 5rem;
+      padding: 0 2rem;
+    }
+  
+    // 📱 Teléfonos pequeños (menos de 480px)
+    @media (max-width: 479px) {
+      height: 50rem;
+  
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+  
+    // 📱 Teléfonos grandes (480px a 767px)
+    @media (min-width: 480px) and (max-width: 767px) {
+      height: 55rem;
+  
+      h1 {
+        font-size: 3rem;
+      }
+    }
+  
+    // 💻 Tablets (768px a 1023px)
+    @media (min-width: 768px) and (max-width: 1023px) {
+      height: 60rem;
+  
+      h1 {
+        font-size: 4rem;
+      }
+    }
+  
+    // 🖥️ Monitores normales (1024px a 1439px)
+    @media (min-width: 1024px) and (max-width: 1439px) {
+      height: 65rem;
+  
+      h1 {
+        font-size: 4.5rem;
+      }
+    }
+  
+    // 🖥️ Monitores grandes (1440px en adelante)
+    @media (min-width: 1440px) {
+      height: 70rem;
+  
+      h1 {
+        font-size: 5rem;
+      }
+    }
+  }
+  

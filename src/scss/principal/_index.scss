@@ -1,0 +1,109 @@
+.contenido-principal {
+    .texto1 {
+      font-size: 5rem;
+      text-align: center;
+    }
+  
+    .texto2 {
+      font-size: 3rem;
+      text-align: center;
+    }
+  
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      padding-bottom: 3%;
+  
+      .feature {
+        background-color: #242121;
+        border-radius: 1rem;
+        padding: 2rem;
+        text-align: center;
+  
+        img {
+          width: 100%;
+          max-width: 230px;
+          height: auto;
+          margin: 0 auto;
+          display: block;
+        }
+  
+        h3 {
+          font-size: 2rem;
+          color: white;
+          margin-top: 1rem;
+        }
+  
+        p {
+          font-size: 1.4rem;
+          color: #ccc;
+        }
+      }
+    }
+  }
+  
+
+  // Teléfonos pequeños
+@media (max-width: 479px) {
+    .contenido-principal {
+      .texto1 {
+        font-size: 2.5rem;
+      }
+      .texto2 {
+        font-size: 1.8rem;
+      }
+  
+      .features {
+        grid-template-columns: 1fr;
+  
+        .feature {
+          img {
+            max-width: 100%;
+          }
+  
+          h3 {
+            font-size: 1.6rem;
+          }
+  
+          p {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+  
+  // Teléfonos grandes
+  @media (min-width: 480px) and (max-width: 767px) {
+    .contenido-principal {
+      .features {
+        grid-template-columns: 1fr;
+  
+        .feature {
+          img {
+            max-width: 80%;
+          }
+        }
+      }
+    }
+  }
+  
+  // Tablets
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .contenido-principal {
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+  
+  // Monitores normales
+  @media (min-width: 1024px) {
+    .contenido-principal {
+      .features {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+  

@@ -21,8 +21,13 @@
         <?php 
         include 'templates/features.php';
         ?>
-
-    </main>    
+    </main>
+    
+    <div class="encontrar">
+    <?php 
+        include 'templates/encontrar.php';
+    ?>
+    </div>
 
 
     
