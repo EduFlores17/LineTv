@@ -1,0 +1,45 @@
+@use 'base/variables' as v;
+
+.header {
+    background-image: url(/src/img/portada.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50rem;
+
+    .contenido{
+        background-color: rgba(0, 0, 0, 0.7);  /* Fondo negro con 50% de transparencia */
+    }
+
+    .barra {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+
+        .logo {
+            width: 15%;
+            height: 50%;
+        }
+
+        .navbar {
+            margin-left: auto; /* Mueve la barra de navegación hacia la derecha */
+
+            .navegacion {
+                display: flex;
+                gap: 2rem;
+
+                a {
+                    color: aliceblue;
+                    text-decoration: none;
+                    font-size: 2.2rem;
+                    text-align: center;
+
+                    &:hover {
+                        color: green;
+                    }
+                }
+            }
+        }
+    }
+}

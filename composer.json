@@ -1,0 +1,15 @@
+{
+    "name": "fedu1/line",
+    "description": "Website de LineMX",
+    "autoload": {
+        "psr-4": {
+            "Fedu1\\Line\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Edu Flores"
+        }
+    ],
+    "require": {}
+}

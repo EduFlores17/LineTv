@@ -1,0 +1,12 @@
+@use 'base/variables';
+@use 'base/mixins';
+@use 'base/reset';
+@use 'base/globales';
+
+@use 'layout/header';
+@use 'layout/footer';
+
+@use 'componentes/botones';
+@use 'componentes/cards';
+
+@use 'principal/index';

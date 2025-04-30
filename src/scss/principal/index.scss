@@ -1,0 +1,31 @@
+.contenido-principal{
+    .texto1{
+        font-size: 5rem;
+        text-align: center;
+    }
+    
+    .texto2{
+        font-size: 3rem;
+        text-align: center;
+    }
+    
+    .features{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding-bottom: 3%;
+    
+        .feature{
+            background-color: #242121;
+            border-radius: 1rem;
+            padding-top: 3%;
+            text-align: center;
+
+            img{
+                width: 230px;
+                height: 150px;
+            }
+        }
+    }    
+}
+
